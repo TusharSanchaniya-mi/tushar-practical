@@ -1,0 +1,43 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "create": "Create",
+    "delete": "Delete",
+    "errorMessage": "Unknown error..!!!",
+    "hey": "Hey there,",
+    "ohhNo": "Ohh Noo!!!",
+    "or": "Or",
+    "ok": "OK",
+    "retry": "Retry",
+    "save": "Save",
+    "see_more": "See More",
+    "skip": "Skip",
+    "welcome": "Welcome",
+    "yes": "Yes",
+    "hello": "Hello {{name}}!",
+    "internetConnectionError": "Please check you internet connectivity.",
+    "noDataFound": "No data found.",
+    "noInternetConnection": "Seems like you are not connected to any network connection."
+  },
+  "login": {
+    "loginAcc": "LOGIN",
+    "email": "Email",
+    "password": "Password",
+    "login": "LOGIN",
+    "emailEmptyVal": "Please enter the email address.",
+    "requiredEmail": "Please enter your email address.",
+    "emailInvalid": "Please enter the correct email address.",
+    "passwordRequired": "Please enter the password.",
+    "PasswordMaximumChar": "You have reached your maximum limit of characters allowed",
+    "passwordValidSmall": "Password must contain at least one lowercase.",
+    "passwordValidNumber": "Password must contain at least one number.",
+    "PasswordMinimumChar": "Password must contain at least 8 characters.",
+    "passwordValidSpecialChar": "Password must contain at least one special character.",
+    "invalidCred": "Invalid user credentials, Please enter valid credentials"
+  },
+  "forceUpdate": {
+    "update": "Update",
+    "updateMessage": "We've release a new version of the App!\nPlease update your app to enjoy these new features.",
+    "retry": "Try again"
+  }
+}
