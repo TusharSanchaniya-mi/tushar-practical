@@ -12,7 +12,9 @@ export const color = {
     progressGreen: '#50B155',
     red: '#EE4B2B',
     secondaryColor: '#6c757d',
+    tabColor: '#FAF9F6',
     textColor: '#343a40',
+    transparent: 'transparent',
     white: 'white',
   },
   light: {
@@ -26,7 +28,9 @@ export const color = {
     progressGreen: '#50B155',
     red: '#EE4B2B',
     secondaryColor: '#6c757d',
+    tabColor: '#FAF9F6',
     textColor: '#343a40',
+    transparent: 'transparent',
     white: 'white',
   },
 };

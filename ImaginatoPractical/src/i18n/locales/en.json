@@ -35,6 +35,10 @@
     "passwordValidSpecialChar": "Password must contain at least one special character.",
     "invalidCred": "Invalid user credentials, Please enter valid credentials"
   },
+  "bottomTab": {
+    "home": "Home",
+    "favourite": "Favourite"
+  },
   "forceUpdate": {
     "update": "Update",
     "updateMessage": "We've release a new version of the App!\nPlease update your app to enjoy these new features.",

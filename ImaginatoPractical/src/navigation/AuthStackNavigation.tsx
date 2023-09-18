@@ -7,7 +7,7 @@ import {
 
 import { LoginScreen } from '@src/screens';
 
-import { NavStackParams, Screen } from './appNavigation.type';
+import { NavStackParams, Screen } from './AppNavigation.type';
 
 const AuthStack = createNativeStackNavigator<NavStackParams>();
 

@@ -4,7 +4,7 @@ import { useLanguage } from './LocalizationContext';
 import { storage } from './storage';
 import { useColor } from './ThemeContext';
 import { loader } from '../MainApp';
-import type { AppNavigationProp } from '../navigation/appNavigation.type';
+import type { AppNavigationProp } from '../navigation/AppNavigation.type';
 import {
   useWithNavigation,
   WithNavigation,
