@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Keyboard, View } from 'react-native';
 
 import {
   AnimatedButton,
@@ -19,10 +19,11 @@ const LoginScreen = () => {
   const {
     color,
     contents,
+    handleEyeToggle,
+    handleLogin,
     initialValues,
     isPassVisible,
-    onLoginPress,
-    onToggleEyeIcon,
+    passwordField,
     signInValidation,
     styles,
   } = useLogin();
@@ -53,7 +54,7 @@ const LoginScreen = () => {
             initialValues={initialValues}
             validateOnMount={true}
             validateOnChange={true}
-            onSubmit={onLoginPress}>
+            onSubmit={handleLogin}>
             {({ handleSubmit, isValid, values }) => {
               return (
                 <View>
@@ -70,6 +71,7 @@ const LoginScreen = () => {
                         : styles.inActiveInputStyle,
                     ]}
                     textInputStyle={[styles.commonInputTextStyle]}
+                    onSubmitEditing={() => passwordField?.current?.focus()}
                     id={'email'}
                     leftIcon={
                       <AppImage
@@ -91,6 +93,7 @@ const LoginScreen = () => {
                         : styles.inActiveInputStyle,
                     ]}
                     textInputStyle={styles.commonInputTextStyle}
+                    onSubmitEditing={() => Keyboard.dismiss()}
                     leftIcon={
                       <AppImage
                         tintColor={color.primaryColor}
@@ -99,7 +102,7 @@ const LoginScreen = () => {
                       />
                     }
                     rightIcon={
-                      <AnimatedTouchableOpacity onPress={onToggleEyeIcon}>
+                      <AnimatedTouchableOpacity onPress={handleEyeToggle}>
                         <AppImage
                           tintColor={color.primaryColor}
                           source={

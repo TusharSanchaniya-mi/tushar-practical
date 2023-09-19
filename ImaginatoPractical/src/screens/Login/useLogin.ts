@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Keyboard } from 'react-native';
 
 import { showToast } from '@app/blueprints';
@@ -22,17 +22,10 @@ const useLogin = () => {
   const styles = loginStyles(color);
 
   const [isPassVisible, setIsPassVisible] = useState(true);
+  const passwordField = useRef<any>(null);
 
   const dispatch = useAppDispatch();
-
   const errorMessage = useSelector(error);
-
-  useEffect(() => {
-    if (errorMessage) {
-      showToast(contents('login.invalidCred'), 'error');
-      dispatch(clearCredentials());
-    }
-  }, [dispatch, errorMessage]);
 
   const signInValidation = yup.object().shape({
     email: yup
@@ -53,7 +46,9 @@ const useLogin = () => {
     email: '',
     password: '',
   };
-
+  /*
+   * Check user for credentials
+   */
   const handleLogin = useCallback(
     (values: typeof initialValues) => {
       Keyboard.dismiss();
@@ -75,19 +70,27 @@ const useLogin = () => {
     [dispatch]
   );
 
-  const onToggleEyeIcon = useCallback(
+  const handleEyeToggle = useCallback(
     () => setIsPassVisible(!isPassVisible),
     [isPassVisible]
   );
 
+  useEffect(() => {
+    if (errorMessage) {
+      showToast(contents('login.invalidCred'), 'error');
+      dispatch(clearCredentials());
+    }
+  }, [dispatch, errorMessage]);
+
   return {
     color,
     contents,
+    handleEyeToggle,
+    handleLogin,
     initialValues,
     isPassVisible,
     navigation,
-    onLoginPress: handleLogin,
-    onToggleEyeIcon,
+    passwordField,
     signInValidation,
     styles,
     ...props,

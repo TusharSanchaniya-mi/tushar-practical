@@ -32,6 +32,9 @@ const useHome = () => {
   const dispatch = useAppDispatch();
   const myFavoriteUsers: UserList[] = useSelector(getFavoritesData);
 
+  /*
+   * Get random user lists
+   */
   const getUsers = useCallback(
     async (isPullToRefresh: boolean = false) => {
       const isConnected = await isNetworkConnected();
@@ -74,26 +77,41 @@ const useHome = () => {
     [services]
   );
 
+  /*
+   * Clear random user lists after pull refresh
+   */
   const clearUsers = useCallback(() => {
     currentPage.current = INITIAL_PAGE;
     shouldLoadMore.current = false;
     setUserLists([]);
   }, []);
 
+  /*
+   * Pull to refresh to get random user lists
+   */
   const onPullToRefresh = useCallback(() => {
     setIsRefreshing(true);
     clearUsers();
     getUsers();
   }, [clearUsers, getUsers]);
 
+  /*
+   * pagination to get random user lists
+   */
   const onNextPage = useCallback(() => {
     getUsers();
   }, [getUsers]);
 
+  /*
+   * Logout user to redirect login screen
+   */
   const handleLogout = useCallback(() => {
     dispatch(clearCredentials());
   }, [dispatch]);
 
+  /*
+   * Remove user that are mark as favorite
+   */
   const handleUnFavorite = useCallback(
     (item: UserList) => {
       try {
@@ -110,6 +128,9 @@ const useHome = () => {
     [dispatch, myFavoriteUsers]
   );
 
+  /*
+   * Mark user as favorite from list
+   */
   const handleFavorite = useCallback(
     (item: UserList) => {
       let favoriteUserLists: FavoritesList[] = [];
@@ -127,6 +148,9 @@ const useHome = () => {
     [dispatch, myFavoriteUsers]
   );
 
+  /*
+   * Check if user is marked as favorite or not from list
+   */
   const isFavorite = useCallback(
     (id: string): boolean => {
       return (
@@ -138,6 +162,9 @@ const useHome = () => {
     [myFavoriteUsers]
   );
 
+  /*
+   * Get initially random users list
+   */
   useEffect(() => {
     getUsers();
   }, [getUsers]);
