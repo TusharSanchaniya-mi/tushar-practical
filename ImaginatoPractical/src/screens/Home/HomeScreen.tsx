@@ -49,9 +49,9 @@ const HomeScreen = () => {
     return (
       <UserView
         item={item}
-        onUnFavouritePress={handleUnFavorite}
-        onFavouritePress={handleFavorite}
-        isFavourite={isFavorite(item.id)}
+        handleUnFavorite={handleUnFavorite}
+        handleFavorite={handleFavorite}
+        isFavorite={isFavorite(item.id)}
       />
     );
   };

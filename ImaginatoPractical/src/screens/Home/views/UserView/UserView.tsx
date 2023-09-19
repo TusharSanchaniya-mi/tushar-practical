@@ -6,26 +6,15 @@ import { AnimatedTouchableOpacity, Text } from '@app/blueprints';
 import { Images } from '@src/assets';
 import { AppImage } from '@src/components';
 import { useAppContext } from '@src/context';
-import type { Extra, UserList } from '@src/services';
+import type { Extra } from '@src/services';
 
-import { homeStyles } from '../Home.style';
-
-interface UserViewProps {
-  item: UserList;
-  onUnFavouritePress: (item: UserList) => void;
-  onFavouritePress: (item: UserList) => void;
-  isFavourite: boolean;
-}
+import { userViewStyle } from './UserView.style';
+import { UserViewProps } from './UserView.type';
 
 export const UserView = React.memo(
-  ({
-    isFavourite,
-    item,
-    onFavouritePress,
-    onUnFavouritePress,
-  }: UserViewProps) => {
+  ({ handleFavorite, handleUnFavorite, isFavorite, item }: UserViewProps) => {
     const { color } = useAppContext();
-    const styles = homeStyles(color);
+    const styles = userViewStyle(color);
     return (
       <View style={styles.bodyContainer}>
         <View style={styles.imageContainer}>
@@ -89,10 +78,10 @@ export const UserView = React.memo(
               </View>
             </View>
 
-            {isFavourite ? (
+            {isFavorite ? (
               <AnimatedTouchableOpacity
                 containerStyle={styles.favIconContainer}
-                onPress={() => onUnFavouritePress(item)}>
+                onPress={() => handleUnFavorite(item)}>
                 <AppImage
                   source={Images.STAR_FILL_IMAGE}
                   resizeMode="contain"
@@ -102,7 +91,7 @@ export const UserView = React.memo(
             ) : (
               <AnimatedTouchableOpacity
                 containerStyle={styles.favIconContainer}
-                onPress={() => onFavouritePress(item)}>
+                onPress={() => handleFavorite(item)}>
                 <AppImage
                   source={Images.STAR_IMAGE}
                   resizeMode="contain"

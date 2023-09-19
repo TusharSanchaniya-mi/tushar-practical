@@ -13,7 +13,7 @@ export class AppServices {
     return new Promise((resolve, reject) => {
       serviceAdapter<UserListDTO, undefined>(
         API_METHODS.GET,
-        `${ServicesEndPoints.USER_LIST}?page=${request.page}&results=10&seed=abc`
+        `${ServicesEndPoints.USER_LIST}?page=${request.page}&results=10`
       )
         .then(res => {
           resolve(new UserListDataMapper().map(res));

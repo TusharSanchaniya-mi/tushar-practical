@@ -14,7 +14,12 @@ import {
 
 import { reduxStorage } from '@src/context';
 
-import { authentication, authUser, favoriteUsers } from './reducers';
+import {
+  authentication,
+  authUser,
+  favoritesList,
+  favoriteUsers,
+} from './reducers';
 
 const rootReducer = combineReducers({
   authUser,
@@ -26,7 +31,7 @@ export type RootState = ReturnType<typeof rootReducer>;
 const persistConfig: PersistConfig<RootState> = {
   key: 'root',
   storage: reduxStorage,
-  whitelist: [authentication],
+  whitelist: [authentication, favoritesList],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

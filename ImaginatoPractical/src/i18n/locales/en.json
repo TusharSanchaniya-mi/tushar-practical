@@ -37,11 +37,10 @@
   },
   "bottomTab": {
     "home": "Home",
-    "favourite": "Favourite"
+    "favorite": "Favorite"
   },
-  "forceUpdate": {
-    "update": "Update",
-    "updateMessage": "We've release a new version of the App!\nPlease update your app to enjoy these new features.",
-    "retry": "Try again"
+  "favorites": {
+    "title": "Favorites",
+    "noFavorites": "Sorry, No Favorites added yet !!"
   }
 }

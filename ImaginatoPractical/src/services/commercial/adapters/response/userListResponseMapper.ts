@@ -37,7 +37,8 @@ export class UserListDataMapper {
       return {
         email: item.email,
         extras: extras,
-        id: `${item.id.name}-${item.id.value}`.replace(/\s+/g, ''),
+        // id: `${item.id.name}-${item.id.value}`.replace(/\s+/g, ''),
+        id: item?.login?.uuid,
         location: item.location.city + ', ' + item.location.country,
         name: item.name.first + ' ' + item.name.last,
         profileUrlLarge: item.picture.large,

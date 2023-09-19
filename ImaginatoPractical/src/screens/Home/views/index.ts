@@ -1,1 +1,1 @@
-export * from './UserView';
+export * from './UserView/UserView';

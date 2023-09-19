@@ -4,6 +4,7 @@ export const color = {
   dark: {
     backgroundColor: '#F4F5FA',
     black: 'black',
+    borderColor: '#E5E4E2',
     darkGrey: '#757A79',
     error: '#BE002C',
     errorBg: '#F4D2D2',
@@ -21,6 +22,7 @@ export const color = {
   light: {
     backgroundColor: '#F4F5FA',
     black: 'black',
+    borderColor: '#E5E4E2',
     darkGrey: '#757A79',
     error: '#BE002C',
     errorBg: '#F4D2D2',
