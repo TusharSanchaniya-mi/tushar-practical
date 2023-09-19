@@ -75,7 +75,11 @@ const LoginScreen = () => {
                     id={'email'}
                     leftIcon={
                       <AppImage
-                        tintColor={color.primaryColor}
+                        tintColor={
+                          values.email?.length > 0
+                            ? color.primaryColor
+                            : color.lightGray
+                        }
                         source={Images.EMAIL_LOGO_IMAGE}
                         style={styles.iconStyle}
                       />
@@ -86,6 +90,7 @@ const LoginScreen = () => {
                     placeholder={contents('login.password')}
                     autoCapitalize="none"
                     returnKeyType={'done'}
+                    ref={passwordField}
                     containerStyle={styles.passwordTextInputContainer}
                     inputContainerStyle={[
                       values.password?.length > 0
@@ -96,7 +101,11 @@ const LoginScreen = () => {
                     onSubmitEditing={() => Keyboard.dismiss()}
                     leftIcon={
                       <AppImage
-                        tintColor={color.primaryColor}
+                        tintColor={
+                          values.password?.length > 0
+                            ? color.primaryColor
+                            : color.lightGray
+                        }
                         source={Images.LOCK_IMAGE}
                         style={styles.iconStyle}
                       />
@@ -104,7 +113,11 @@ const LoginScreen = () => {
                     rightIcon={
                       <AnimatedTouchableOpacity onPress={handleEyeToggle}>
                         <AppImage
-                          tintColor={color.primaryColor}
+                          tintColor={
+                            values.password?.length > 0
+                              ? color.primaryColor
+                              : color.lightGray
+                          }
                           source={
                             isPassVisible
                               ? Images.EYE_SHOW_IMAGE

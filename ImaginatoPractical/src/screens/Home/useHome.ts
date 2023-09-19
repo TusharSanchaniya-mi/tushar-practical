@@ -99,8 +99,8 @@ const useHome = () => {
    * pagination to get random user lists
    */
   const onNextPage = useCallback(() => {
-    getUsers();
-  }, [getUsers]);
+    usersList.length > 0 && getUsers();
+  }, [getUsers, usersList]);
 
   /*
    * Logout user to redirect login screen
