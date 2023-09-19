@@ -62,6 +62,7 @@ const HomeScreen = () => {
         rightComponent={
           <AnimatedTouchableOpacity onPress={handleLogout}>
             <AppImage
+              tintColor={color.primaryColor}
               source={Images.LOGOUT_IMAGE}
               resizeMode="contain"
               style={styles.logout}

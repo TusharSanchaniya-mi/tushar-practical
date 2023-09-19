@@ -105,7 +105,7 @@ const LoginScreen = () => {
                           source={
                             isPassVisible
                               ? Images.EYE_SHOW_IMAGE
-                              : Images.EYE_SHOW_IMAGE
+                              : Images.EYE_HIDE_IMAGE
                           }
                           style={styles.eyeOffIcon}
                         />

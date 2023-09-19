@@ -27,7 +27,6 @@ export const favoriteViewStyles = ({
     itemContainer: {
       alignItems: 'center',
       backgroundColor: white,
-      elevation: 4,
       flex: 1,
       flexDirection: 'row',
       marginVertical: scaleWidth(4),

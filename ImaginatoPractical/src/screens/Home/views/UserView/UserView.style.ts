@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 
+import { isIOS } from '@src/constants';
 import {
   Palette,
   scaled,
@@ -31,6 +32,11 @@ export const userViewStyle = ({ black, darkGrey, lightGray, white }: Palette) =>
       ...scaled(23),
     },
     favIconContainer: {
+      ...scaled(25),
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginRight: scaleWidth(15),
+      marginTop: scaleWidth(10),
       padding: scaledSize(10),
     },
     image: {
@@ -45,7 +51,7 @@ export const userViewStyle = ({ black, darkGrey, lightGray, white }: Palette) =>
       borderRadius: scaledSize(76),
       height: scaleWidth(70),
       justifyContent: 'center',
-      left: 0,
+      left: isIOS ? 0 : 10,
       overflow: 'hidden',
       position: 'absolute',
       width: scaleWidth(70),
@@ -60,7 +66,7 @@ export const userViewStyle = ({ black, darkGrey, lightGray, white }: Palette) =>
       borderRadius: scaledSize(8),
       elevation: 4,
       marginStart: scaledSize(20),
-      paddingStart: scaledSize(60),
+      paddingStart: scaledSize(isIOS ? 60 : 70),
       shadowColor: black,
       shadowOffset: { height: 0.5, width: 0 },
       shadowOpacity: 0.125,

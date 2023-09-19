@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-import { Palette, scaleHeight } from '../../utils';
+import { Palette, scaleHeight, scaleWidth } from '../../utils';
 
 export const headerStyles = ({ white }: Palette) =>
   StyleSheet.create({
     backButtonContainer: {
-      end: 0,
+      end: scaleWidth(25),
       padding: 10,
       position: 'absolute',
       zIndex: 1,
@@ -31,5 +31,9 @@ export const headerStyles = ({ white }: Palette) =>
       height: scaleHeight(25),
       width: scaleHeight(25),
     },
-    title: { color: white, textAlign: 'center', width: '100%' },
+    title: {
+      color: white,
+      textAlign: 'center',
+      width: '100%',
+    },
   });
