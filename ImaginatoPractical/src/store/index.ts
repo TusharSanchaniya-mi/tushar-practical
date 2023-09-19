@@ -14,10 +14,11 @@ import {
 
 import { reduxStorage } from '@src/context';
 
-import { authentication, authUser } from './reducers';
+import { authentication, authUser, favoriteUsers } from './reducers';
 
 const rootReducer = combineReducers({
   authUser,
+  favoriteUsers,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

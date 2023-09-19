@@ -5,6 +5,8 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 
+import { NetworkLoggerScreen } from '@src/screens';
+
 import { NavStackParams, Screen } from './AppNavigation.type';
 import { BottomTabNavigation } from './BottomTabNavigation';
 
@@ -19,7 +21,9 @@ const screenOptions: NativeStackNavigationOptions = {
 export const MainStackNavigation = () => {
   return (
     <MainStack.Navigator
-      screenOptions={screenOptions}
+      screenOptions={{
+        ...screenOptions,
+      }}
       initialRouteName={Screen.BOTTOM_TAB_NAVIGATION}>
       <MainStack.Screen
         name={Screen.BOTTOM_TAB_NAVIGATION}
@@ -27,6 +31,13 @@ export const MainStackNavigation = () => {
           gestureEnabled: false,
         }}
         component={BottomTabNavigation}
+      />
+      <MainStack.Screen
+        name={Screen.DEBUGGER}
+        options={{
+          gestureEnabled: false,
+        }}
+        component={NetworkLoggerScreen}
       />
     </MainStack.Navigator>
   );

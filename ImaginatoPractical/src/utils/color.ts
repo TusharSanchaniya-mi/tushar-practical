@@ -2,8 +2,9 @@ import { ColorSchemeName } from 'react-native/types';
 
 export const color = {
   dark: {
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#F4F5FA',
     black: 'black',
+    darkGrey: '#757A79',
     error: '#BE002C',
     errorBg: '#F4D2D2',
     lightGray: '#bebebe',
@@ -18,8 +19,9 @@ export const color = {
     white: 'white',
   },
   light: {
-    backgroundColor: '#f8f9fa',
+    backgroundColor: '#F4F5FA',
     black: 'black',
+    darkGrey: '#757A79',
     error: '#BE002C',
     errorBg: '#F4D2D2',
     lightGray: '#bebebe',
@@ -38,3 +40,16 @@ export const color = {
 export type Palette = (typeof color)[keyof typeof color];
 
 export type Theme = ColorSchemeName | keyof typeof color;
+
+export const getRandomColor = (opacity?: number) => {
+  var letters = '0123456789ABCDEF';
+  var colorWithHash = '#';
+  for (var i = 0; i < 6; i++) {
+    colorWithHash += letters[Math.floor(Math.random() * 16)];
+  }
+  if (opacity) {
+    return colorWithHash + opacity?.toString;
+  } else {
+    return colorWithHash;
+  }
+};

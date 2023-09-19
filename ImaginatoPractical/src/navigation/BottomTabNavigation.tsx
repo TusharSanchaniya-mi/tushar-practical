@@ -58,14 +58,14 @@ export const TabBar = React.memo((props: BottomTabBarProps) => {
   const styles = bottomTabStyle(color);
   const arrayBottomTabData: Array<BottomNavTab> = [
     {
-      icon: Images.HOME_ICON,
+      icon: Images.HOME_IMAGE,
       title: contents('bottomTab.home'),
-      unSelectedIcon: Images.HOME_OUTLINE_ICON,
+      unSelectedIcon: Images.HOME_OUTLINE_IMAGE,
     },
     {
-      icon: Images.FAV_ICON,
+      icon: Images.HEART_FILL_IMAGE,
       title: contents('bottomTab.favourite'),
-      unSelectedIcon: Images.FAV_OUTLINE_ICON,
+      unSelectedIcon: Images.HEART_IMAGE,
     },
   ];
   return (
@@ -102,7 +102,7 @@ export const TabBar = React.memo((props: BottomTabBarProps) => {
                   (isFocused
                     ? arrayBottomTabData[index]?.icon
                     : arrayBottomTabData[index]?.unSelectedIcon) ||
-                  Images.HOME_ICON
+                  Images.HOME_IMAGE
                 }
                 style={styles.tabBarIcon}
               />
@@ -127,25 +127,30 @@ const bottomTabStyle = ({
   backgroundColor,
   lightGray,
   primaryColor,
-  tabColor,
+  white,
 }: Palette) => {
   const styles = StyleSheet.create({
-    safeAreaStyle: { backgroundColor: lightGray },
+    safeAreaStyle: {
+      backgroundColor: white,
+    },
     selectedTabBarItemStyle: {
       borderTopColor: primaryColor,
     },
     tabBarContainer: {
       alignItems: 'center',
-      backgroundColor: tabColor,
+      backgroundColor: white,
       elevation: 16,
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingBottom: scaleHeight(isIOS ? 10 : 10),
+      paddingBottom: scaleHeight(isIOS ? 0 : 10),
     },
-    tabBarIcon: { ...scaled(22), tintColor: primaryColor },
+    tabBarIcon: {
+      ...scaled(22),
+      tintColor: primaryColor,
+    },
     tabBarItemStyle: {
       alignItems: 'center',
-      backgroundColor: tabColor,
+      backgroundColor: white,
       borderColor: backgroundColor,
       borderTopWidth: scaleHeight(1.5),
       justifyContent: 'center',

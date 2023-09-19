@@ -38,7 +38,7 @@ const LoginScreen = () => {
         <View style={styles.formContainerStyle}>
           <View style={styles.iconContainerStyle}>
             <AppImage
-              source={Images.APP_LOGO}
+              source={Images.APP_LOGO_IMAGE}
               resizeMode="contain"
               style={styles.loginIconStyle}
             />
@@ -74,7 +74,7 @@ const LoginScreen = () => {
                     leftIcon={
                       <AppImage
                         tintColor={color.primaryColor}
-                        source={Images.EMAIL_LOGO}
+                        source={Images.EMAIL_LOGO_IMAGE}
                         style={styles.iconStyle}
                       />
                     }
@@ -94,7 +94,7 @@ const LoginScreen = () => {
                     leftIcon={
                       <AppImage
                         tintColor={color.primaryColor}
-                        source={Images.LOCK_ICON}
+                        source={Images.LOCK_IMAGE}
                         style={styles.iconStyle}
                       />
                     }
@@ -104,8 +104,8 @@ const LoginScreen = () => {
                           tintColor={color.primaryColor}
                           source={
                             isPassVisible
-                              ? Images.EYE_HIDE_ICON
-                              : Images.EYE_SHOW_ICON
+                              ? Images.EYE_SHOW_IMAGE
+                              : Images.EYE_SHOW_IMAGE
                           }
                           style={styles.eyeOffIcon}
                         />

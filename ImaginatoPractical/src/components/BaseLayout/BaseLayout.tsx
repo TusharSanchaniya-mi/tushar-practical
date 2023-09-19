@@ -29,10 +29,10 @@ export const BaseLayout = React.memo(({ children, style }: BaseLayoutProps) => {
   );
 });
 
-export const baseLayoutStyles = ({ backgroundColor }: Palette) =>
+export const baseLayoutStyles = ({ white }: Palette) =>
   StyleSheet.create({
     safeAreaStyle: {
-      backgroundColor: backgroundColor,
+      backgroundColor: white,
       flex: 1,
     },
   });
