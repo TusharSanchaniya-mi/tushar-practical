@@ -38,6 +38,7 @@ export const UserView = React.memo(
 
               <View style={styles.locationContainer}>
                 <AppImage
+                  tintColor={color.lightGray}
                   source={Images.LOCATION_IMAGE}
                   resizeMode="cover"
                   style={styles.locationIcon}
@@ -83,6 +84,7 @@ export const UserView = React.memo(
                 containerStyle={styles.favIconContainer}
                 onPress={() => handleUnFavorite(item)}>
                 <AppImage
+                  tintColor={color.primaryColor}
                   source={Images.STAR_FILL_IMAGE}
                   resizeMode="contain"
                   style={styles.favIcon}
@@ -93,6 +95,7 @@ export const UserView = React.memo(
                 containerStyle={styles.favIconContainer}
                 onPress={() => handleFavorite(item)}>
                 <AppImage
+                  tintColor={color.primaryColor}
                   source={Images.STAR_IMAGE}
                   resizeMode="contain"
                   style={styles.favIcon}

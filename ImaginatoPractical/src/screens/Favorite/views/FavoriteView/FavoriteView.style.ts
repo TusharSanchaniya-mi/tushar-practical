@@ -17,7 +17,6 @@ export const favoriteViewStyles = ({
   StyleSheet.create({
     favIcon: {
       ...scaled(28),
-      tintColor: primaryColor,
     },
     favIconContainer: {
       padding: scaledSize(10),

@@ -8,13 +8,7 @@ import {
   scaleWidth,
 } from '@src/utils';
 
-export const userViewStyle = ({
-  black,
-  darkGrey,
-  lightGray,
-  primaryColor,
-  white,
-}: Palette) =>
+export const userViewStyle = ({ black, darkGrey, lightGray, white }: Palette) =>
   StyleSheet.create({
     bodyContainer: {
       justifyContent: 'center',
@@ -35,7 +29,6 @@ export const userViewStyle = ({
     },
     favIcon: {
       ...scaled(23),
-      tintColor: primaryColor,
     },
     favIconContainer: {
       padding: scaledSize(10),

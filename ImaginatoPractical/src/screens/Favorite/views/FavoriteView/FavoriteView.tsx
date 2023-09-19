@@ -38,6 +38,7 @@ export const FavoriteView = ({ item, unFavoriteHandle }: FavoriteViewProps) => {
           containerStyle={styles.favIconContainer}
           onPress={() => unFavoriteHandle(item)}>
           <AppImage
+            tintColor={color.primaryColor}
             source={Images.STAR_FILL_IMAGE}
             resizeMode="contain"
             style={styles.favIcon}

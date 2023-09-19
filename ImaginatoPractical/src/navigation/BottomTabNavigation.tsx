@@ -63,9 +63,9 @@ export const TabBar = React.memo((props: BottomTabBarProps) => {
       unSelectedIcon: Images.HOME_OUTLINE_IMAGE,
     },
     {
-      icon: Images.HEART_FILL_IMAGE,
+      icon: Images.STAR_FILL_IMAGE,
       title: contents('bottomTab.favorite'),
-      unSelectedIcon: Images.HEART_IMAGE,
+      unSelectedIcon: Images.STAR_IMAGE,
     },
   ];
   return (
