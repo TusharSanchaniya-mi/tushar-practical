@@ -12,12 +12,14 @@
 
   ```bash
     yarn android
+    yarn start
   ```
 
 - 🚀 To run in iOS
 
   ```bash
   yarn ios
+  yarn start
   ```
 
   press `a` to run in android `i` to run in iOS
